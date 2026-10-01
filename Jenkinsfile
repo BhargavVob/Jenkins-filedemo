@@ -4,7 +4,7 @@ pipeline{
     parameters{
         string(
             name:'APP_PORT',
-            defautValue:'3000',
+            defaultValue:'3000',
             description:'Server Port'
         )
     }
@@ -26,7 +26,7 @@ pipeline{
             }
         }
         stage('Dependenices'){
-            steps{
+            steps{  
                 bat 'npm install'
             }
         }
