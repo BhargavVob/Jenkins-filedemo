@@ -25,8 +25,8 @@ pipeline{
                 bat 'docker --version'
             }
         }
-        stage('Dependenices'){
-            steps{  
+        stage('Dependencies'){
+            steps{
                 bat 'npm install'
             }
         }
@@ -43,7 +43,7 @@ pipeline{
         stage('Run Container'){
             steps{
                 bat '''
-                    docker run -d --name node-app-%BUILD_NUMBER% -p %APP_PORT%:3000 %IMAGE_NAME%:%BUILD_NUMBER
+                    docker run -d --name node-app-%BUILD_NUMBER% -p %APP_PORT%:3000 %IMAGE_NAME%:%BUILD_NUMBER%
                 '''
             }
         }
